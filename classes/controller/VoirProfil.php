@@ -11,28 +11,7 @@
 </head>
 
 <body>
-    <?php
-    require_once '../view/ViewUser.php';
-    require_once '../model/ModelUser.php';
-    require_once '../view/ListUser.php';
-    if(isset($_POST['ajout'])){
-        ModelUser::createUser($_POST);
-        ?>
-        <div class="alert alert-success" role="alert">
-            A simple success alert—check it out!
-        </div>
-        <?php
-    } else {
-        ViewUser::ajoutUser();
-    }
-
-    // liste users
-    if(ModelUser::listUsers()){
-        ListUser::listUsers(ModelUser::listUsers());
-    } else {
-        echo '0 user';
-    }
-    ?>
+    <h1>USER <?php echo $_GET['id'] ?></h1>
 
 
 
